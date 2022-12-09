@@ -1,2 +1,1 @@
 # JetBrains-Academy--Memorization-Tool
- 
