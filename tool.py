@@ -31,7 +31,7 @@ class Flashcard(Base):
 class FlashcardApplication:
     def __init__(self):
         engine = create_engine('sqlite:///flashcard.db?check_same_thread=False',  # check_same_thread=False
-                               echo=False,                                        # so that Hyperskill can test the project properly
+                               echo=False,  # so that Hyperskill can test the project properly
                                poolclass=NullPool)
         Base.metadata.create_all(engine)
         Session = sessionmaker(bind=engine)
@@ -100,8 +100,8 @@ class FlashcardApplication:
             return "1. Add a new flashcard\n" \
                    "2. Exit"
         else:
-            return "1. Add flashcards\n"\
-                   "2. Practice flashcards\n"\
+            return "1. Add flashcards\n" \
+                   "2. Practice flashcards\n" \
                    "3. Exit"
 
     def take_not_empty_input(self, a_question, expected_answers=None):
@@ -119,7 +119,6 @@ class FlashcardApplication:
                 pass
             else:
                 return user_input
-
 
     def user_choice(self, a_status):
         if a_status:
